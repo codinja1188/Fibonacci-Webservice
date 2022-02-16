@@ -5,18 +5,18 @@
 
 1. The project should provide a GoLang web service.
 
-  a. The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0.
+    a. The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0.
 
-  I.E. given n  = 5, appropriate output would represent the sequence [0, 1, 1, 2, 3].
+    I.E. given n  = 5, appropriate output would represent the sequence [0, 1, 1, 2, 3].
 
-  b. Given a negative number or non integer, respond with an appropriate error.
+    b. Given a negative number or non integer, respond with an appropriate error.
 
 2. Include whatever instructions are necessary to build and deploy/run the project, where "deploy/run" means the web service is accepting requests and responding to them as appropriate.
 
-Issued from the location where you downloaded the project. The service will be
-available on port ``443`` of your host operating system, eg::
+    Issued from the location where you downloaded the project. The service will be available on port ``443`` of your host operating system, 
+    Ex::
 
-  ``https://localhost/fbseries``
+    ```https://localhost:443/fbseries```
 
 NOTE:
 =====
