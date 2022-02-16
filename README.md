@@ -11,8 +11,6 @@
 
     b. Given a negative number or non integer, respond with an appropriate error.
 
-2. Include whatever instructions are necessary to build and deploy/run the project, where "deploy/run" means the web service is accepting requests and responding to them as appropriate.
-
     Issued from the location where you downloaded the project. The service will be available on port ``443`` of your host operating system, 
     Ex::
 
