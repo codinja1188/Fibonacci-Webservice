@@ -22,10 +22,15 @@ NOTE:
 =====
 '''
     command to create a self signed certificate
+
     $ openssl req -subj '/CN=myplatform.host' -x509 -newkey rsa:4096 -nodes -keyout server.key -out server.crt -days 36500
+
     we have enable Chrome settings to accept self-signed localhost certificate
+
     => Simply paste this in your chrome:
+
         $ chrome://flags/#allow-insecure-localhost
+
     => You should see highlighted text saying: Allow invalid certificates for resources loaded from localhost
 
         $ Click Enable.
