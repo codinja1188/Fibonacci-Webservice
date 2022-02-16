@@ -34,7 +34,6 @@ func fibonacci(fib_num int64) ([]int64, int) {
 		var itr int64 = 0
 		for ; itr < fib_num; itr++ {
 			ret = fib(int64(itr))
-			//fmt.Printf("Fibonacci %v = %v\n", itr, ret)
 			series = append(series, ret)
 		}
 	}
@@ -48,7 +47,6 @@ func FibonacciService(w http.ResponseWriter, r *http.Request) {
 		t.Execute(w, nil)
 		return
 	case http.MethodPost:
-		//fmt.Println("username:", r.FormValue("number"))
 		r.ParseForm()
 		intVar, _ := strconv.Atoi(r.FormValue("number"))
 		fbSeries, err := fibonacci(int64(intVar))
@@ -58,8 +56,7 @@ func FibonacciService(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				fmt.Println("error:", err)
 			}
-			//fmt.Println(fbSeries)
-			//fmt.Println(jsonOut)
+
 			w.Write(jsonOut)
 			return
 		}
@@ -74,30 +71,8 @@ func FibonacciService(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-/*
-func ListFibonacciNumber(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/fbseries" {
-		http.NotFound(w, r)
-		return
-	}
-	switch r.Method {
-	case http.MethodGet:
-
-	case http.MethodPost:
-		fmt.Println(r.Form) // print information on server side.
-		fmt.Println("++ path", r.URL.Path)
-		fmt.Fprintf(w, "++ Hello astaxie!") // write data to response
-		fmt.Println("Number:", r.Form["number"])
-		return
-	default:
-		w.WriteHeader(http.StatusMethodNotAllowed)
-	}
-	w.Header().Set("Content-Type", "application/json")
-}
-*/
 func main() {
 	http.HandleFunc("/fbseries", FibonacciService)
-	//http.HandleFunc("/fbseries", ListFibonacciNumber)
 	err := http.ListenAndServeTLS(":443", "server.crt", "server.key", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
