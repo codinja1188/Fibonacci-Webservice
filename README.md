@@ -20,21 +20,21 @@ available on port ``443`` of your host operating system, eg::
 
 NOTE:
 =====
-'''
+```
     command to create a self signed certificate
 
     $ openssl req -subj '/CN=myplatform.host' -x509 -newkey rsa:4096 -nodes -keyout server.key -out server.crt -days 36500
 
-    we have enable Chrome settings to accept self-signed localhost certificate
+       we have enable Chrome settings to accept self-signed localhost certificate
 
     => Simply paste this in your chrome:
 
-        $ chrome://flags/#allow-insecure-localhost
+       $ chrome://flags/#allow-insecure-localhost
 
     => You should see highlighted text saying: Allow invalid certificates for resources loaded from localhost
 
-        $ Click Enable.
-'''    
+       $ Click Enable.
+```    
 
 Thoughts about a production web service:
 ```
@@ -48,6 +48,6 @@ Thoughts about a production web service:
       * Load balancer
       * Ability to scale out number of web servers
 4) High availability
-      * Handled by application layer or VM infrastructure?
-5) Monitoring / Alerting in case web service is unavailable
+      * It can beHandled by VM infrastructure (kubernetes VM).
+5) Monitoring / Alerting in case web service is unavailable using Grafana/Telemetrics
 ```

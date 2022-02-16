@@ -10,15 +10,15 @@ import (
 )
 
 func fib(num int64) int64 {
-	var tempA, itr, tempB int64 = 0, 0, 1
+	var valA, itr, valB int64 = 0, 0, 1
 	// Iterate until desired position in sequence.
 	for ; itr < num; itr++ {
 		// Use temporary variable to swap values.
-		temp := tempA
-		tempA = tempB
-		tempB = temp + tempA
+		temp := valA
+		valA = valB
+		valB = temp + valA
 	}
-	return tempA
+	return valA
 }
 
 func fibonacci(fib_num int64) ([]int64, int) {
